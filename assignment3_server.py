@@ -28,16 +28,24 @@ def MakeApiRequestToGetPlayers(sock):
         sock.listen()
         data, addr = sock.accept()
 
+        IDofPlayer = data.recv(1024)
+        IDofPlayer = IDofPlayer.decode("utf-8")
+        print(IDofPlayer)
+
         response = requests.get(URL, headers=headers)
         body = json.loads(response.content)
         players = body.get('Items')
 
+        selectedPlayers = sorted(players, key=lambda elem: elem['player_skill'])
+
+
+
         #Debugging
-        for player in players:
-            print("Player ID: " + player['player_id'])
-            print("Player Name: " + player['player_name'])
-            print("Player Skill: " + player['player_skill'])
-            print("------------------")
+        #for player in players:
+        #    print("Player ID: " + player['player_id'])
+        #    print("Player Name: " + player['player_name'])
+        #    print("Player Skill: " + player['player_skill'])
+        #    print("------------------")
 
 def ActiveIndicator(sock):
     print("Server listening...")
