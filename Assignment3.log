@@ -1,41 +1,25 @@
-INFO:root:Simulating 1 matches.
-INFO:root:Simulating 1 matches.
-INFO:root:Matched players: ID#1 ID#2 ID#8
-INFO:root:Simulating 1 matches.
-INFO:root:Matched players: ID#7, ID#2, ID#8
-INFO:root:Simulating 1 matches.
-INFO:root:Matched players: ID#7, ID#2, ID#8
-INFO:root:Winning player: ID#2
-INFO:root:Simulating 1 matches.
-INFO:root:Matched players: ID#4, ID#2, ID#8
-INFO:root:Winning player: ID#2
-INFO:root:Winning player old skill: 975
-INFO:root:Winning player new skill: 975
-INFO:root:Simulating 1 matches.
-INFO:root:Matched players: ID#2, ID#8, ID#9
-INFO:root:Winning player: ID#9
-INFO:root:Winning player old skill: 1110
-INFO:root:Winning player new skill: 1110
-INFO:root:Simulating 1 matches.
-INFO:root:Matched players: ID#0, ID#2, ID#8
-INFO:root:Winning player: ID#8
-INFO:root:Winning player old skill: 905
-INFO:root:Losing player: ID#0
-INFO:root:Losing player: ID#2
-INFO:root:Simulating 3 matches.
 INFO:root:Simulating 3 matches.
 INFO:root:Beginning Game#0
-INFO:root:Matched players: ID#0, ID#2, ID#8
-INFO:root:Winning player: ID#0
-INFO:root:Losing player: ID#2
-INFO:root:Losing player: ID#8
+INFO:root:Matched players: ramin, kazuya, king
+INFO:root:Winning player: king
+INFO:root:player skill: 870
+INFO:root:Losing player: ramin
+INFO:root:player skill: 860
+INFO:root:Losing player: kazuya
+INFO:root:player skill: 950
 INFO:root:Beginning Game#1
-INFO:root:Matched players: ID#7, ID#2, ID#8
-INFO:root:Winning player: ID#8
-INFO:root:Losing player: ID#7
-INFO:root:Losing player: ID#2
+INFO:root:Matched players: bob, kazuya, king
+INFO:root:Winning player: king
+INFO:root:player skill: 875
+INFO:root:Losing player: bob
+INFO:root:player skill: 1010
+INFO:root:Losing player: kazuya
+INFO:root:player skill: 945
 INFO:root:Beginning Game#2
-INFO:root:Matched players: ID#8, ID#2, ID#9
-INFO:root:Winning player: ID#9
-INFO:root:Losing player: ID#8
-INFO:root:Losing player: ID#2
+INFO:root:Matched players: dragunov, kazuya, king
+INFO:root:Winning player: king
+INFO:root:player skill: 880
+INFO:root:Losing player: dragunov
+INFO:root:player skill: 790
+INFO:root:Losing player: kazuya
+INFO:root:player skill: 940

@@ -45,19 +45,14 @@ def SimulateMatchmaking(thisPlayer):
         data = sock.recv(1024)
 
     matchMakedPlayers = json.loads(data)
-    logging.info('Matched players: ID#' + matchMakedPlayers[0]['player_id'] + ', ID#' + matchMakedPlayers[1]['player_id'] + ', ID#' + matchMakedPlayers[2]['player_id'])
-
-    # for player in matchMakedPlayers:
-    #    print("Player ID: " + player['player_id'])
-    #    print("Player Name: " + str(player['player_name']))
-    #    print("Player Skill: " + str(player['player_skill']))
-    #    print("------------------")
+    logging.info('Matched players: ' + matchMakedPlayers[0]['player_name'] + ', ' + matchMakedPlayers[1]['player_name'] + ', ' + matchMakedPlayers[2]['player_name'])
 
     winningPlayer = random.choice(matchMakedPlayers)
     matchMakedPlayers.remove(winningPlayer)
 
-    print(winningPlayer)
-    logging.info('Winning player: ID#' + winningPlayer['player_id'])
+    print("Player that won: " + winningPlayer['player_name'])
+    logging.info('Winning player: ' + winningPlayer['player_name'])
+    logging.info('player skill: ' + str(winningPlayer['player_skill']))
 
     #Update the winning player's skill
     params = {'player_id': winningPlayer['player_id'], 'result': 1}
@@ -70,7 +65,8 @@ def SimulateMatchmaking(thisPlayer):
         print("Player Name: " + str(player['player_name']))
         params = {'player_id': player['player_id'], 'result': 0}
         requests.get(UpdateSkillURL, headers=Updateheaders, params=params)
-        logging.info('Losing player: ID#' + player['player_id'])
+        logging.info('Losing player: ' + player['player_name'])
+        logging.info('player skill: ' + str(player['player_skill']))
 
 if __name__ == '__main__':
    main()
