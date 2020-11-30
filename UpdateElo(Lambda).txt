@@ -1,0 +1,64 @@
+import json
+import boto3
+
+dynamoDB = boto3.resource('dynamodb')
+table = dynamoDB.Table('player-data')
+
+def lambda_handler(event, context):
+    
+    print(event)
+    params = event['queryStringParameters']
+    print(params)
+    player_id = params['player_id']
+        
+    if params['result'] == '1':
+        UpdateWon(player_id)
+        return{
+            'statusCode': 200,
+            'body': json.dumps('Won!')
+        }
+    if params['result'] == '0':
+        UpdateLoss(player_id)
+        return {
+            'statusCode': 200,
+            'body': json.dumps('Lost.')
+        }
+        
+    return {
+        'statusCode': 200,
+        'body': json.dumps("Test")
+    }
+    
+def UpdateWon(player_id):
+    player = table.get_item(Key = {'player_id': player_id})
+    items = player['Item']
+    player_games = items['player_games']
+    player_skill = items['player_skill']
+    
+    player_games += 1
+    player_skill += 5
+    
+    table.put_item(
+        Item = {
+            'player_id': player_id, 
+            'player_games': player_games, 
+            'player_name': items['player_name'], 
+            'player_skill': player_skill}
+            )
+            
+def UpdateLoss(player_id):
+    player = table.get_item(Key = {'player_id': player_id})
+    items = player['Item']
+    player_games = items['player_games']
+    player_skill = items['player_skill']
+    
+    player_games += 1
+    player_skill -= 5
+    
+    table.put_item(
+        Item = {
+            'player_id': player_id, 
+            'player_games': player_games, 
+            'player_name': items['player_name'], 
+            'player_skill': player_skill}
+            )
