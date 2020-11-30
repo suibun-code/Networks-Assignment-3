@@ -17,7 +17,7 @@ PlayersAPI_KEY = "tFm7YmutpZ9nZ9NuWi0Hda96PgxdcvJw3ktOx6bz"
 Playersheaders = { "x-api-key": PlayersAPI_KEY}
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-ipAddress = "localhost"
+ipAddress = "54.91.203.249"
 port = 12345
 
 #To actually simulate the matches, a preset of player IDs need to be
